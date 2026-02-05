@@ -1,4 +1,4 @@
-extends Node2D
+extends Thing
 class_name Vehicle
 
 ##The maximum speed (per second) the vehicle can travel at
@@ -15,10 +15,8 @@ var velocity:Vector2 = Vector2.ZERO
 
 
 
-func _physics_process(delta: float) -> void:
-	do_process(delta)
 	
-func do_process(delta) -> void:
+func do_process(delta:float, neighbours:Array[Thing]) -> void:
 	desired = get_desired()
 	velocity += get_acceleration() * delta
 	velocity.limit_length(max_speed)

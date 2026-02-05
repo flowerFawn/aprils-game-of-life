@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://c0k67iygqw4qh"]
 
+[ext_resource type="Script" uid="uid://bbffsk7r2nnyt" path="res://scripts/world_handler.gd" id="1_4wyf3"]
 [ext_resource type="Script" uid="uid://ca7qujltyf515" path="res://scripts/vehicle.gd" id="1_nnsk1"]
 [ext_resource type="Texture2D" uid="uid://njjameo23f1k" path="res://icon.svg" id="1_rwgxs"]
 
 [node name="Node2D" type="Node2D" unique_id=1745574569]
+script = ExtResource("1_4wyf3")
 
 [node name="Vehicle" type="Node2D" parent="." unique_id=58734685 node_paths=PackedStringArray("node_sprite")]
 script = ExtResource("1_nnsk1")
