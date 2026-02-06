@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="BSeekPrey" format=3 uid="uid://bs3hoixmlourn"]
+
+[ext_resource type="Script" uid="uid://dhri0d7kmfln4" path="res://scripts/resources/behaviours/b_seek_prey.gd" id="1_2rlkd"]
+
+[resource]
+script = ExtResource("1_2rlkd")
+premovement_time = 0.5
+food_sense_distance = 1800.0
+considered_group = &"Prey"
+weight = 3.0
+metadata/_custom_type_script = "uid://dhri0d7kmfln4"

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="BAvoidance" format=3 uid="uid://dborl8qcsjjo8"]
+
+[ext_resource type="Script" uid="uid://c1tg4rc74wnlv" path="res://scripts/resources/behaviours/b_avoidance.gd" id="1_0fuy3"]
+
+[resource]
+script = ExtResource("1_0fuy3")
+avoidance_distance = 1000.0
+considered_group = &"Predator"
+weight = 100.0
+metadata/_custom_type_script = "uid://c1tg4rc74wnlv"

@@ -4,4 +4,5 @@
 
 [resource]
 script = ExtResource("1_1cww2")
+weight = 0.4
 metadata/_custom_type_script = "uid://b34pps15h2nt3"

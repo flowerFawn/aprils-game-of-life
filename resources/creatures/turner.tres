@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CreatureType" format=3 uid="uid://bnd7hjshh86qi"]
+
+[ext_resource type="Script" uid="uid://tllikwphifxb" path="res://scripts/resources/behaviours/behaviour.gd" id="1_cfjqv"]
+[ext_resource type="Script" uid="uid://bxx3ip7ef8ixi" path="res://scripts/resources/creatures/creature_type.gd" id="2_a36em"]
+[ext_resource type="Resource" uid="uid://dg5uad0rcexv8" path="res://resources/behaviours/wander.tres" id="2_cr1b7"]
+[ext_resource type="Resource" uid="uid://eibd0p6n5jgm" path="res://resources/behaviours/prey_avoidance.tres" id="3_cr1b7"]
+[ext_resource type="Resource" uid="uid://g0gpceg5fvrn" path="res://resources/behaviours/prey_attraction.tres" id="4_dut1u"]
+
+[resource]
+script = ExtResource("2_a36em")
+behaviours = Array[ExtResource("1_cfjqv")]([ExtResource("2_cr1b7"), ExtResource("3_cr1b7"), ExtResource("4_dut1u")])
+groups = Array[StringName]([&"Vehicle", &"Prey"])
+metadata/_custom_type_script = "uid://bxx3ip7ef8ixi"

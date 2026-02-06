@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="BAttraction" format=3 uid="uid://g0gpceg5fvrn"]
 
-[ext_resource type="Script" uid="uid://c70ery7ey2sxt" path="res://scripts/resources/behaviours/b_attraction.gd" id="1_gbvrm"]
+[ext_resource type="Script" uid="uid://c70ery7ey2sxt" path="res://scripts/resources/behaviours/b_attraction.gd" id="1_mk877"]
 
 [resource]
-script = ExtResource("1_gbvrm")
+script = ExtResource("1_mk877")
 attraction_distance = 100.0
-considered_group = &"Vehicle"
+considered_group = &"Prey"
 weight = 0.1
 metadata/_custom_type_script = "uid://c70ery7ey2sxt"

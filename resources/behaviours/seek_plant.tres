@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="BSeekFood" format=3 uid="uid://dcihxeqq7u6c1"]
+
+[ext_resource type="Script" uid="uid://dwc22jsk0fps" path="res://scripts/resources/behaviours/b_seek_food.gd" id="1_x2bvy"]
+
+[resource]
+script = ExtResource("1_x2bvy")
+food_sense_distance = 500.0
+considered_group = &"Plant"
+metadata/_custom_type_script = "uid://dwc22jsk0fps"

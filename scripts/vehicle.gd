@@ -1,13 +1,12 @@
 extends Thing
 class_name Vehicle
 
-##The maximum speed (per second) the vehicle can travel at
-@export var max_speed:float = 500
-##The max amount (per second) the vehicle can apply a force to it's velocity
-@export var force:float = 1000
-@export var behaviours:Array[Behaviour]
+
 @export_category("technical")
-@export var node_sprite:Sprite2D
+var node_sprite:Sprite2D
+
+##Type type of creature in question
+var creature_type:CreatureType
 
 ##Where the vehicle currently wants to go
 var desired:Vector2
@@ -20,16 +19,16 @@ var velocity:Vector2 = Vector2.ZERO
 func do_process(delta:float, neighbours:Array[Thing]) -> void:
 	desired = get_desired(neighbours)
 	velocity += get_acceleration() * delta
-	velocity.limit_length(max_speed)
+	velocity.limit_length(creature_type.max_speed)
 	node_sprite.rotation = velocity.angle()
 	move(delta)
 	
 func get_desired(neighbours:Array[Thing]) -> Vector2:
 	var affecting_vectors:Array[Vector2] = []
 	var new_desired:Vector2 = Vector2.ZERO
-	for behaviour:Behaviour in behaviours:
+	for behaviour:Behaviour in creature_type.behaviours:
 		affecting_vectors.append(behaviour.get_desired(self, neighbours))
-	return get_vector_average(affecting_vectors).normalized() * max_speed
+	return get_vector_average(affecting_vectors).normalized() * creature_type.max_speed
 	
 func get_vector_average(vectors:Array[Vector2]) -> Vector2:
 	if vectors.is_empty():
@@ -40,8 +39,16 @@ func get_vector_average(vectors:Array[Vector2]) -> Vector2:
 	return average_vector / vectors.size()
 	
 func get_acceleration() -> Vector2:
-	return force * (desired - velocity).normalized()
+	return creature_type.force * (desired - velocity).normalized()
 	
 
 func move(delta:float) -> void:
 	position += velocity * delta
+	
+func _init(given_creature_type:CreatureType) -> void:
+	creature_type = given_creature_type
+	node_sprite = Sprite2D.new()
+	node_sprite.texture = preload("res://icon.svg")
+	add_child(node_sprite)
+	for group:StringName in given_creature_type.groups:
+		add_to_group(group)

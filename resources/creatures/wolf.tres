@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CreatureType" format=3 uid="uid://ckelnbkwmatw3"]
+
+[ext_resource type="Script" uid="uid://tllikwphifxb" path="res://scripts/resources/behaviours/behaviour.gd" id="1_65eln"]
+[ext_resource type="Script" uid="uid://bxx3ip7ef8ixi" path="res://scripts/resources/creatures/creature_type.gd" id="2_cy6dy"]
+[ext_resource type="Resource" uid="uid://bs3hoixmlourn" path="res://resources/behaviours/seek_prey.tres" id="2_hc0va"]
+
+[resource]
+script = ExtResource("2_cy6dy")
+max_speed = 1000.0
+force = 2000.0
+behaviours = Array[ExtResource("1_65eln")]([ExtResource("2_hc0va")])
+groups = Array[StringName]([&"Vehicle", &"Predator"])
+metadata/_custom_type_script = "uid://bxx3ip7ef8ixi"

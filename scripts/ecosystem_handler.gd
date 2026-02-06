@@ -9,3 +9,9 @@ func _physics_process(delta: float) -> void:
 	for thing:Thing in things:
 		thing.do_process(delta, things)
 		
+func _ready() -> void:
+	add_child(Vehicle.new(load("uid://bnd7hjshh86qi")))
+	add_child(Vehicle.new(load("uid://dpngri5e6lfiq")))
+	add_child(Vehicle.new(load("uid://da6kt54fotebe")))
+	await get_tree().create_timer(2).timeout
+	add_child(Vehicle.new(load("uid://ckelnbkwmatw3")))
