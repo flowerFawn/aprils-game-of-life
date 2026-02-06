@@ -9,3 +9,5 @@ class_name CreatureType
 @export var behaviours:Array[Behaviour]
 ##The groups this creature will be added to
 @export var groups:Array[StringName]
+##Group this creature will eat (when within 100 pixels)
+@export var eats:StringName

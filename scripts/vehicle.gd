@@ -13,7 +13,7 @@ var desired:Vector2
 ##Current velocity the vehicle is moving at
 var velocity:Vector2 = Vector2.ZERO
 
-
+const EAT_DISTANCE_SQUARED:int = 100 ** 2
 
 	
 func do_process(delta:float, neighbours:Array[Thing]) -> void:
@@ -22,6 +22,11 @@ func do_process(delta:float, neighbours:Array[Thing]) -> void:
 	velocity.limit_length(creature_type.max_speed)
 	node_sprite.rotation = velocity.angle()
 	move(delta)
+	for neighbour:Thing in neighbours:
+		if neighbour.is_in_group(creature_type.eats):
+			if position.distance_squared_to(neighbour.position) < EAT_DISTANCE_SQUARED:
+				eat()
+				neighbour.queue_free()
 	
 func get_desired(neighbours:Array[Thing]) -> Vector2:
 	var affecting_vectors:Array[Vector2] = []
@@ -41,6 +46,8 @@ func get_vector_average(vectors:Array[Vector2]) -> Vector2:
 func get_acceleration() -> Vector2:
 	return creature_type.force * (desired - velocity).normalized()
 	
+func eat():
+	pass
 
 func move(delta:float) -> void:
 	position += velocity * delta

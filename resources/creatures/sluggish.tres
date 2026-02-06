@@ -13,4 +13,5 @@ max_speed = 300.0
 force = 250.0
 behaviours = Array[ExtResource("1_sneer")]([ExtResource("2_atqjn"), ExtResource("3_sneer"), ExtResource("4_atqjn"), ExtResource("5_atqjn")])
 groups = Array[StringName]([&"Vehicle", &"Prey"])
+eats = &"Plant"
 metadata/_custom_type_script = "uid://bxx3ip7ef8ixi"

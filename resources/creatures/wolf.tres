@@ -10,4 +10,5 @@ max_speed = 1000.0
 force = 2000.0
 behaviours = Array[ExtResource("1_65eln")]([ExtResource("2_hc0va")])
 groups = Array[StringName]([&"Vehicle", &"Predator"])
+eats = &"Prey"
 metadata/_custom_type_script = "uid://bxx3ip7ef8ixi"
