@@ -15,7 +15,6 @@ func get_desired(behavour:Vehicle, neighbours:Array[Thing]) -> Vector2:
 			if distance < closest_food_distance_squared and distance < food_sense_squared:
 				closest_food_distance_squared = behavour.position.distance_squared_to(thing.position)
 				closest_food = thing
-	print(closest_food_distance_squared)
 	if closest_food_distance_squared == INF:
 		current_rotation += r.randf_range(-0.1 * PI, 0.1 * PI)
 		return set_mag(behavour.position.direction_to(

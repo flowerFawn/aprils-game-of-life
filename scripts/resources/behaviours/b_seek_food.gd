@@ -19,5 +19,6 @@ func get_desired(behavour:Vehicle, neighbours:Array[Thing]) -> Vector2:
 		return set_mag(behavour.position.direction_to(
 		behavour.position + (behavour.velocity.normalized() * 300) + (Vector2.UP.rotated(current_rotation) * 100)), weight)
 	else:
+		print("A")
 		return behavour.position.direction_to(closest_food_position)
 			

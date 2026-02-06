@@ -4,12 +4,13 @@
 [ext_resource type="Resource" uid="uid://dg5uad0rcexv8" path="res://resources/behaviours/wander.tres" id="2_atqjn"]
 [ext_resource type="Resource" uid="uid://eibd0p6n5jgm" path="res://resources/behaviours/prey_avoidance.tres" id="3_sneer"]
 [ext_resource type="Resource" uid="uid://g0gpceg5fvrn" path="res://resources/behaviours/prey_attraction.tres" id="4_atqjn"]
+[ext_resource type="Resource" uid="uid://dcihxeqq7u6c1" path="res://resources/behaviours/seek_plant.tres" id="5_atqjn"]
 [ext_resource type="Script" uid="uid://bxx3ip7ef8ixi" path="res://scripts/resources/creatures/creature_type.gd" id="5_q5w0r"]
 
 [resource]
 script = ExtResource("5_q5w0r")
 max_speed = 300.0
 force = 250.0
-behaviours = Array[ExtResource("1_sneer")]([ExtResource("2_atqjn"), ExtResource("3_sneer"), ExtResource("4_atqjn")])
+behaviours = Array[ExtResource("1_sneer")]([ExtResource("2_atqjn"), ExtResource("3_sneer"), ExtResource("4_atqjn"), ExtResource("5_atqjn")])
 groups = Array[StringName]([&"Vehicle", &"Prey"])
 metadata/_custom_type_script = "uid://bxx3ip7ef8ixi"
