@@ -10,7 +10,6 @@ var snow_line:Array[float]
 
 func calculate_mountain_range() -> void:
 	var new_range_vec:Vector2 = Vector2(0.5 - amplitude_slider.value, amplitude_slider.value)
-	print(new_range_vec)
 	peaks.assign(noise.get_noise(2000, frequency_slider.value, octave_slider.value).map(noise.range_equiv.bind(new_range_vec)))
 	snow_line.assign(noise.get_noise(2000, frequency_slider.value, octave_slider.value / 2).map(noise.range_equiv.bind(new_range_vec)))
 	for i in range(snow_line.size()):

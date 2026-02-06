@@ -3,7 +3,7 @@ class_name BAvoidance
 
 @export var avoidance_distance:float
 
-func get_desired(behavour:Thing, neighbours:Array[Thing]) -> Vector2:
+func get_desired(behavour:Vehicle, neighbours:Array[Thing]) -> Vector2:
 	var affecting:Array[Vector2] = []
 	var distance_squared:float = avoidance_distance ** 2
 	for neighbour:Thing in neighbours:

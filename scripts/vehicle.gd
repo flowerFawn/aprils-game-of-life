@@ -29,7 +29,6 @@ func get_desired(neighbours:Array[Thing]) -> Vector2:
 	var new_desired:Vector2 = Vector2.ZERO
 	for behaviour:Behaviour in behaviours:
 		affecting_vectors.append(behaviour.get_desired(self, neighbours))
-	print(affecting_vectors)
 	return get_vector_average(affecting_vectors).normalized() * max_speed
 	
 func get_vector_average(vectors:Array[Vector2]) -> Vector2:

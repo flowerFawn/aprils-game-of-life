@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://tllikwphifxb" path="res://scripts/resources/behaviours/behaviour.gd" id="3_71j4m"]
 [ext_resource type="Resource" uid="uid://eibd0p6n5jgm" path="res://resources/behaviours/avoidance.tres" id="4_qfnet"]
 [ext_resource type="Resource" uid="uid://g0gpceg5fvrn" path="res://resources/behaviours/attraction.tres" id="5_qfnet"]
+[ext_resource type="Resource" uid="uid://dg5uad0rcexv8" path="res://resources/behaviours/wander.tres" id="6_i7141"]
 
 [node name="Node2D" type="Node2D" unique_id=1745574569]
 script = ExtResource("1_4wyf3")
@@ -13,7 +14,7 @@ script = ExtResource("1_4wyf3")
 [node name="Vehicle" type="Node2D" parent="." unique_id=58734685 node_paths=PackedStringArray("node_sprite") groups=["Vehicle"]]
 position = Vector2(167, 114)
 script = ExtResource("1_nnsk1")
-behaviours = Array[ExtResource("3_71j4m")]([ExtResource("4_qfnet"), ExtResource("5_qfnet")])
+behaviours = Array[ExtResource("3_71j4m")]([ExtResource("4_qfnet"), ExtResource("5_qfnet"), ExtResource("6_i7141")])
 node_sprite = NodePath("Sprite2D")
 metadata/_custom_type_script = "uid://ca7qujltyf515"
 
@@ -25,7 +26,7 @@ position = Vector2(475, 471)
 script = ExtResource("1_nnsk1")
 max_speed = 800.0
 force = 300.0
-behaviours = Array[ExtResource("3_71j4m")]([ExtResource("4_qfnet"), ExtResource("5_qfnet")])
+behaviours = Array[ExtResource("3_71j4m")]([ExtResource("4_qfnet"), ExtResource("5_qfnet"), ExtResource("6_i7141")])
 node_sprite = NodePath("Sprite2D")
 metadata/_custom_type_script = "uid://ca7qujltyf515"
 
@@ -37,7 +38,7 @@ position = Vector2(1006, 194)
 script = ExtResource("1_nnsk1")
 max_speed = 300.0
 force = 900.0
-behaviours = Array[ExtResource("3_71j4m")]([ExtResource("5_qfnet"), ExtResource("4_qfnet")])
+behaviours = Array[ExtResource("3_71j4m")]([ExtResource("5_qfnet"), ExtResource("4_qfnet"), ExtResource("6_i7141")])
 node_sprite = NodePath("Sprite2D")
 metadata/_custom_type_script = "uid://ca7qujltyf515"
 
