@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cg3v8t6nf3ar3"]
+
+[ext_resource type="Script" uid="uid://bn5okgiw1jqov" path="res://scripts/perlin_landscape.gd" id="1_6myq8"]
+
+[node name="Control" type="Control" unique_id=437210073]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2140379073]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_6myq8")

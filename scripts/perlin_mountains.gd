@@ -4,14 +4,17 @@ extends ColorRect
 @export var octave_slider:VSlider
 @export var frequency_slider:VSlider
 
-var noise:OneDPerlin = OneDPerlin.new()
+@onready var noise:OneDPerlin = OneDPerlin.new(0.01, 8)
 var peaks:Array[float]
 var snow_line:Array[float]
 
 func calculate_mountain_range() -> void:
 	var new_range_vec:Vector2 = Vector2(0.5 - amplitude_slider.value, amplitude_slider.value)
-	peaks.assign(noise.get_noise(2000, frequency_slider.value, octave_slider.value).map(noise.range_equiv.bind(new_range_vec)))
-	snow_line.assign(noise.get_noise(2000, frequency_slider.value, octave_slider.value / 2).map(noise.range_equiv.bind(new_range_vec)))
+	noise.set_frequency(frequency_slider.value)
+	noise.set_octaves(octave_slider.value)
+	peaks.assign(noise.get_noise(2000).map(noise.range_equiv.bind(new_range_vec)))
+	noise.set_octaves(octave_slider.value / 2)
+	snow_line.assign(noise.get_noise(2000).map(noise.range_equiv.bind(new_range_vec)))
 	for i in range(snow_line.size()):
 		snow_line[i] += 0.2
 	material.set_shader_parameter(&"peaks", peaks)
